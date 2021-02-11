@@ -13,10 +13,12 @@ module.exports = {
   },
   plugins: ['react', 'jsx-a11y', 'prettier'],
   rules: {
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+    'arrow-body-style': 'off',
     'import/extensions': 'off',
     'import/no-absolute-path': 'off',
     'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
+    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'react/jsx-filename-extension': 'off',
   },
 };

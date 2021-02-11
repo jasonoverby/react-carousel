@@ -1,0 +1,44 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 100px;
+  justify-content: center;
+}
+
+.imgContainer {
+  border: 1px solid black;
+  display: grid;
+  height: 450px;
+  justify-content: center;
+  width: 600px;
+}
+
+a {
+  display: grid;
+  text-decoration: none;
+}
+
+img {
+  align-self: center;
+  max-width: 500px;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dots {
+  grid-column-start: 2;
+  text-align: center;
+}
+
+.dots button {
+  font-size: 48px;
+  padding: 0 10px;
+}
+
+/* TODO: add ADA */
+/* TODO: add breakpoints */
