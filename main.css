@@ -45,3 +45,25 @@ button {
   font-size: 48px;
   padding: 0 10px;
 }
+
+@media (max-width: 700px) {
+  .imgContainer {
+    height: 300px;
+    width: 400px;
+  }
+
+  img {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 500px) {
+  .imgContainer {
+    height: 200px;
+    width: 300px;
+  }
+
+  img {
+    max-width: 250px;
+  }
+}
