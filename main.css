@@ -42,8 +42,13 @@ button {
 }
 
 .dots button {
+  color: #aaa;
   font-size: 48px;
   padding: 0 10px;
+}
+
+.dots button.active {
+  color: #000;
 }
 
 @media (max-width: 700px) {

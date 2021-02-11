@@ -3,9 +3,17 @@ import React from 'react';
 import { imageLocations } from '/lib/image-locations';
 import { updateImage } from '/lib/utils';
 
-export const Dots = ({ setImageIndex, setImageLoaded }) => {
+export const Dots = ({
+  activeDotIndex,
+  setActiveDotIndex,
+  setImageIndex,
+  setImageLoaded,
+}) => {
   const dots = imageLocations.map((_, i) => (
     <Dot
+      index={i}
+      activeDotIndex={activeDotIndex}
+      setActiveDotIndex={setActiveDotIndex}
       updatedImageIndex={i}
       setImageIndex={setImageIndex}
       setImageLoaded={setImageLoaded}
@@ -16,16 +24,27 @@ export const Dots = ({ setImageIndex, setImageLoaded }) => {
   return <div className="dots">{dots}</div>;
 };
 
-export const Dot = ({ updatedImageIndex, setImageIndex, setImageLoaded }) => (
-  <button
-    onClick={async () => {
-      await updateImage({
-        updatedImageIndex,
-        setImageIndex,
-        setImageLoaded,
-      });
-    }}
-  >
-    <span>&#183;</span>
-  </button>
-);
+export const Dot = ({
+  activeDotIndex,
+  index,
+  setActiveDotIndex,
+  setImageIndex,
+  setImageLoaded,
+  updatedImageIndex,
+}) => {
+  return (
+    <button
+      className={index === activeDotIndex ? 'active' : ''}
+      onClick={async () => {
+        await updateImage({
+          setActiveDotIndex,
+          setImageIndex,
+          setImageLoaded,
+          updatedImageIndex,
+        });
+      }}
+    >
+      <span>&#183;</span>
+    </button>
+  );
+};

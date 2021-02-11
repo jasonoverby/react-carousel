@@ -4,6 +4,7 @@ import { updateImage, getNewImageIndex } from '/lib/utils';
 
 export const DecrementImage = ({
   imageIndex,
+  setActiveDotIndex,
   setImageIndex,
   setImageLoaded,
 }) => (
@@ -11,9 +12,10 @@ export const DecrementImage = ({
     onClick={async () => {
       const updatedImageIndex = getNewImageIndex(imageIndex, 'decrement');
       await updateImage({
-        updatedImageIndex,
+        setActiveDotIndex,
         setImageIndex,
         setImageLoaded,
+        updatedImageIndex,
       });
     }}
   >
@@ -23,6 +25,7 @@ export const DecrementImage = ({
 
 export const IncrementImage = ({
   imageIndex,
+  setActiveDotIndex,
   setImageIndex,
   setImageLoaded,
 }) => (
@@ -30,9 +33,10 @@ export const IncrementImage = ({
     onClick={async () => {
       const updatedImageIndex = getNewImageIndex(imageIndex, 'increment');
       await updateImage({
-        updatedImageIndex,
+        setActiveDotIndex,
         setImageIndex,
         setImageLoaded,
+        updatedImageIndex,
       });
     }}
   >

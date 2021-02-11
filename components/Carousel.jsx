@@ -9,15 +9,17 @@ export const Carousel = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [carouselPaused, setCarouselPaused] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(true);
+  const [activeDotIndex, setActiveDotIndex] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(async () => {
       if (!carouselPaused) {
         const updatedImageIndex = getNewImageIndex(imageIndex, 'increment');
         await updateImage({
-          updatedImageIndex,
+          setActiveDotIndex,
           setImageIndex,
           setImageLoaded,
+          updatedImageIndex,
         });
       }
     }, 10000);
@@ -28,6 +30,7 @@ export const Carousel = () => {
     <div className="container">
       <DecrementImage
         imageIndex={imageIndex}
+        setActiveDotIndex={setActiveDotIndex}
         setImageIndex={setImageIndex}
         setImageLoaded={setImageLoaded}
       />
@@ -38,10 +41,16 @@ export const Carousel = () => {
       />
       <IncrementImage
         imageIndex={imageIndex}
+        setActiveDotIndex={setActiveDotIndex}
         setImageIndex={setImageIndex}
         setImageLoaded={setImageLoaded}
       />
-      <Dots setImageIndex={setImageIndex} setImageLoaded={setImageLoaded} />
+      <Dots
+        activeDotIndex={activeDotIndex}
+        setActiveDotIndex={setActiveDotIndex}
+        setImageIndex={setImageIndex}
+        setImageLoaded={setImageLoaded}
+      />
     </div>
   );
 };
