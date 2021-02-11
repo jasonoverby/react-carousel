@@ -20,8 +20,14 @@ a {
 }
 
 img {
+  opacity: 0;
+  transition: opacity 0.1s ease;
   align-self: center;
   max-width: 500px;
+}
+
+.imageLoaded {
+  opacity: 1;
 }
 
 button {
