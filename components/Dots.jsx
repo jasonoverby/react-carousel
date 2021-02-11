@@ -1,17 +1,31 @@
 import React from 'react';
 
 import { imageLocations } from '/lib/image-locations';
+import { updateImage } from '/lib/utils';
 
-export const Dots = ({ setIndex }) => {
+export const Dots = ({ setImageIndex, setImageLoaded }) => {
   const dots = imageLocations.map((_, i) => (
-    <Dot index={i} setIndex={setIndex} key={`dot-${i}`} />
+    <Dot
+      updatedImageIndex={i}
+      setImageIndex={setImageIndex}
+      setImageLoaded={setImageLoaded}
+      key={`dot-${i}`}
+    />
   ));
 
   return <div className="dots">{dots}</div>;
 };
 
-export const Dot = ({ index, setIndex }) => (
-  <button onClick={() => setIndex(index)}>
+export const Dot = ({ updatedImageIndex, setImageIndex, setImageLoaded }) => (
+  <button
+    onClick={async () => {
+      await updateImage({
+        updatedImageIndex,
+        setImageIndex,
+        setImageLoaded,
+      });
+    }}
+  >
     <span>&#183;</span>
   </button>
 );
