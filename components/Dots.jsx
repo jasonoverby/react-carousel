@@ -44,7 +44,7 @@ export const Dot = ({
         });
       }}
     >
-      <span>&#183;</span>
+      <span>•</span>
     </button>
   );
 };

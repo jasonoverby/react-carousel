@@ -19,7 +19,7 @@ export const DecrementImage = ({
       });
     }}
   >
-    ◀
+    <span className="arrow">◀</span>
   </button>
 );
 
@@ -40,6 +40,6 @@ export const IncrementImage = ({
       });
     }}
   >
-    ▶
+    <span className="arrow">▶</span>
   </button>
 );
