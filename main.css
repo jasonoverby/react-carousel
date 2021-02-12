@@ -115,6 +115,13 @@ button {
   cursor: pointer;
 }
 
+.changeImage {
+  align-self: center;
+  height: 50px;
+  justify-self: center;
+  width: 50px;
+}
+
 .arrow {
   color: #000;
   font-size: 32px;
@@ -194,12 +201,12 @@ button {
     max-width: 350px;
   }
 
-  .dots button {
-    font-size: 32px;
-  }
-
   .arrow {
     font-size: 28px;
+  }
+
+  .dots button {
+    font-size: 32px;
   }
 }
 

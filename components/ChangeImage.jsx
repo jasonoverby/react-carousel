@@ -9,6 +9,7 @@ export const DecrementImage = ({
   setImageLoaded,
 }) => (
   <button
+    className="changeImage"
     onClick={async () => {
       const updatedImageIndex = getNewImageIndex(imageIndex, 'decrement');
       await updateImage({
@@ -30,6 +31,7 @@ export const IncrementImage = ({
   setImageLoaded,
 }) => (
   <button
+    className="changeImage"
     onClick={async () => {
       const updatedImageIndex = getNewImageIndex(imageIndex, 'increment');
       await updateImage({
