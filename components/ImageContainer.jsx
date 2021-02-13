@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import { imageLocations } from '/lib/image-locations';
 
@@ -34,3 +35,10 @@ export const ImageContainer = ({
     />
   </div>
 );
+
+ImageContainer.propTypes = {
+  imageIndex: PropTypes.number,
+  imageLoaded: PropTypes.bool,
+  setCarouselPaused: PropTypes.func,
+};
+ImageLink.propTypes = ImageContainer.propTypes;

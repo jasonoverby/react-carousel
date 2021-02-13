@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { imageLocations } from '/lib/image-locations';
 import { updateImage } from '/lib/utils';
@@ -49,4 +50,15 @@ export const Dot = ({
       <span>•</span>
     </button>
   );
+};
+
+Dots.propTypes = {
+  activeDotIndex: PropTypes.number,
+  setActiveDotIndex: PropTypes.func,
+  setImageIndex: PropTypes.func,
+  setImageLoaded: PropTypes.func,
+};
+Dot.propTypes = {
+  ...Dots.propTypes,
+  index: PropTypes.number,
 };

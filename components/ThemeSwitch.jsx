@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const ThemeSwitch = ({ checked, toggleTheme }) => {
   const handleKeyPress = (e) => {
@@ -18,7 +19,7 @@ export const ThemeSwitch = ({ checked, toggleTheme }) => {
           <input
             type="checkbox"
             role="switch"
-            onClick={toggleTheme}
+            onChange={toggleTheme}
             checked={checked}
             aria-checked={checked}
           />
@@ -28,4 +29,9 @@ export const ThemeSwitch = ({ checked, toggleTheme }) => {
       <span className="themeIcon">🌜</span>
     </>
   );
+};
+
+ThemeSwitch.propTypes = {
+  checked: PropTypes.bool,
+  toggleTheme: PropTypes.func,
 };
