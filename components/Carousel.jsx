@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { ImageContainer } from './ImageContainer';
 import { Dots } from './Dots';
 import { DecrementImage, IncrementImage } from './ChangeImage';
-import { getNewImageIndex, updateImage } from '../lib/utils';
+import { useImageCycling } from '../lib/custom-hooks';
 
 export const Carousel = () => {
   const [imageIndex, setImageIndex] = useState(0);
@@ -11,19 +11,12 @@ export const Carousel = () => {
   const [imageLoaded, setImageLoaded] = useState(true);
   const [activeDotIndex, setActiveDotIndex] = useState(0);
 
-  useEffect(() => {
-    const intervalId = setInterval(async () => {
-      if (!carouselPaused) {
-        const updatedImageIndex = getNewImageIndex(imageIndex, 'increment');
-        await updateImage({
-          setActiveDotIndex,
-          setImageIndex,
-          setImageLoaded,
-          updatedImageIndex,
-        });
-      }
-    }, 10000);
-    return () => clearInterval(intervalId);
+  useImageCycling({
+    carouselPaused,
+    imageIndex,
+    setActiveDotIndex,
+    setImageIndex,
+    setImageLoaded,
   });
 
   return (
