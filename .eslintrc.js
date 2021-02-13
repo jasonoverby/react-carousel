@@ -14,11 +14,23 @@ module.exports = {
   plugins: ['react', 'jsx-a11y', 'prettier'],
   rules: {
     'arrow-body-style': 'off',
-    'import/extensions': 'off',
-    'import/no-absolute-path': 'off',
-    'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
-    'react/jsx-filename-extension': 'off',
   },
+  overrides: [
+    {
+      files: ['index.js'],
+      rules: {
+        'react/jsx-filename-extension': 'off',
+      },
+    },
+    {
+      files: ['components/Dots.jsx'],
+      rules: {
+        // these array elements will not be moved around
+        // so it's ok to use the index as part of the key
+        'react/no-array-index-key': 'off',
+      },
+    },
+  ],
 };
