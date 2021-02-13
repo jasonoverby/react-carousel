@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { imageLocations } from '/lib/image-locations';
+import { imageLocations } from '../lib/image-locations';
 
 export const ImageLink = ({ imageIndex, imageLoaded, setCarouselPaused }) => {
   return (
@@ -10,7 +10,12 @@ export const ImageLink = ({ imageIndex, imageLoaded, setCarouselPaused }) => {
         ${imageLocations[imageIndex].href} (opens in a new tab)`}
       href={imageLocations[imageIndex].href}
       onMouseOver={() => setCarouselPaused(true)}
+      // for keyboard navigation
+      onFocus={() => setCarouselPaused(true)}
       onMouseOut={() => setCarouselPaused(false)}
+      // for keyboard navigation
+      onBlur={() => setCarouselPaused(false)}
+      rel="noreferrer"
       target="_blank"
     >
       <img
@@ -37,8 +42,8 @@ export const ImageContainer = ({
 );
 
 ImageContainer.propTypes = {
-  imageIndex: PropTypes.number,
-  imageLoaded: PropTypes.bool,
-  setCarouselPaused: PropTypes.func,
+  imageIndex: PropTypes.number.isRequired,
+  imageLoaded: PropTypes.bool.isRequired,
+  setCarouselPaused: PropTypes.func.isRequired,
 };
 ImageLink.propTypes = ImageContainer.propTypes;

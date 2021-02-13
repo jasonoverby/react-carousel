@@ -35,12 +35,12 @@ button:focus {
   outline: none;
 }
 a:focus-visible,
-label:focus-visible,
+#switch:focus-visible,
 button:focus-visible {
   outline: 1px solid #000;
 }
 .darkTheme a:focus-visible,
-.darkTheme label:focus-visible,
+.darkTheme #switch:focus-visible,
 .darkTheme button:focus-visible {
   outline: 1px solid #fff;
 }
@@ -73,10 +73,9 @@ Toggle switch for dark theme
   width: 48px;
 }
 
-.themeSwitch input {
-  height: 0;
-  opacity: 0;
-  width: 0;
+#switch {
+  height: 1px;
+  width: 1px;
 }
 
 .slider {

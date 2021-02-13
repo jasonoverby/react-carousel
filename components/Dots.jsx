@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { imageLocations } from '/lib/image-locations';
-import { updateImage } from '/lib/utils';
+import { imageLocations } from '../lib/image-locations';
+import { updateImage } from '../lib/utils';
 
 export const Dots = ({
   activeDotIndex,
@@ -12,13 +12,12 @@ export const Dots = ({
 }) => {
   const dots = imageLocations.map((_, i) => (
     <Dot
-      index={i}
       activeDotIndex={activeDotIndex}
+      index={i}
+      key={`dot-${i}`}
       setActiveDotIndex={setActiveDotIndex}
-      updatedImageIndex={i}
       setImageIndex={setImageIndex}
       setImageLoaded={setImageLoaded}
-      key={`dot-${i}`}
     />
   ));
 
@@ -31,7 +30,6 @@ export const Dot = ({
   setActiveDotIndex,
   setImageIndex,
   setImageLoaded,
-  updatedImageIndex,
 }) => {
   return (
     <button
@@ -40,12 +38,13 @@ export const Dot = ({
       aria-label={`show image ${index + 1}`}
       onClick={async () => {
         await updateImage({
+          updatedImageIndex: index,
           setActiveDotIndex,
           setImageIndex,
           setImageLoaded,
-          updatedImageIndex,
         });
       }}
+      type="button"
     >
       <span>•</span>
     </button>
@@ -53,12 +52,12 @@ export const Dot = ({
 };
 
 Dots.propTypes = {
-  activeDotIndex: PropTypes.number,
-  setActiveDotIndex: PropTypes.func,
-  setImageIndex: PropTypes.func,
-  setImageLoaded: PropTypes.func,
+  activeDotIndex: PropTypes.number.isRequired,
+  setActiveDotIndex: PropTypes.func.isRequired,
+  setImageIndex: PropTypes.func.isRequired,
+  setImageLoaded: PropTypes.func.isRequired,
 };
 Dot.propTypes = {
   ...Dots.propTypes,
-  index: PropTypes.number,
+  index: PropTypes.number.isRequired,
 };

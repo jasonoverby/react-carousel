@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { ImageContainer } from './ImageContainer';
 import { Dots } from './Dots';
 import { DecrementImage, IncrementImage } from './ChangeImage';
-import { getNewImageIndex, updateImage } from '/lib/utils';
+import { getNewImageIndex, updateImage } from '../lib/utils';
 
 export const Carousel = () => {
   const [imageIndex, setImageIndex] = useState(0);
