@@ -19,6 +19,7 @@ export const ImageLink = ({ imageIndex, imageLoaded, setCarouselPaused }) => {
       target="_blank"
     >
       <img
+        alt={imageLocations[imageIndex].alt}
         aria-label="This image will change every ten seconds unless the cursor is hovering over it"
         src={imageLocations[imageIndex].src}
         className={imageLoaded ? 'imageLoaded' : ''}
