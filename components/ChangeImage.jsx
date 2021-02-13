@@ -9,6 +9,7 @@ export const DecrementImage = ({
   setImageLoaded,
 }) => (
   <button
+    aria-label="show previous image"
     className="changeImage"
     onClick={async () => {
       const updatedImageIndex = getNewImageIndex(imageIndex, 'decrement');
@@ -31,6 +32,7 @@ export const IncrementImage = ({
   setImageLoaded,
 }) => (
   <button
+    aria-label="show previous image"
     className="changeImage"
     onClick={async () => {
       const updatedImageIndex = getNewImageIndex(imageIndex, 'increment');

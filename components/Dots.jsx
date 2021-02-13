@@ -35,6 +35,8 @@ export const Dot = ({
   return (
     <button
       className={index === activeDotIndex ? 'active' : ''}
+      // image number in label should not be zero-indexed as this could be confusing
+      aria-label={`show image ${index + 1}`}
       onClick={async () => {
         await updateImage({
           setActiveDotIndex,

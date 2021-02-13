@@ -8,7 +8,7 @@ export const App = () => {
   const toggleTheme = () => setDarkTheme(!darkTheme);
   return (
     <main className={darkTheme ? 'darkTheme' : ''}>
-      <ThemeSwitch toggleTheme={toggleTheme} />
+      <ThemeSwitch toggleTheme={toggleTheme} checked={darkTheme} />
       <Carousel />
     </main>
   );

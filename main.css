@@ -115,6 +115,20 @@ button {
   cursor: pointer;
 }
 
+/* remove focus outline unless user is navigating by keyboard */
+a,
+button:focus {
+  outline: none;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid #000;
+}
+.darkTheme a:focus-visible,
+.darkTheme button:focus-visible {
+  outline: 1px solid #fff;
+}
+
 .changeImage {
   align-self: center;
   height: 50px;
