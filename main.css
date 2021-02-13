@@ -10,6 +10,46 @@ main.darkTheme {
   background-color: #000;
 }
 
+a {
+  display: grid;
+  text-decoration: none;
+}
+
+img {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  align-self: center;
+  max-width: 500px;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* remove focus outline unless user is navigating by keyboard */
+a,
+label,
+button:focus {
+  outline: none;
+}
+a:focus-visible,
+label:focus-visible,
+button:focus-visible {
+  outline: 1px solid #000;
+}
+.darkTheme a:focus-visible,
+.darkTheme label:focus-visible,
+.darkTheme button:focus-visible {
+  outline: 1px solid #fff;
+}
+
+/*
+
+Toggle switch for dark theme
+
+*/
 .themeIcon {
   font-size: 22px;
   position: fixed;
@@ -74,6 +114,11 @@ input:checked + .slider:before {
   transform: translateX(20px);
 }
 
+/*
+
+Image Carousel
+
+*/
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -93,40 +138,8 @@ input:checked + .slider:before {
   border-color: #fff;
 }
 
-a {
-  display: grid;
-  text-decoration: none;
-}
-
-img {
-  opacity: 0;
-  transition: opacity 0.1s ease;
-  align-self: center;
-  max-width: 500px;
-}
-
 .imageLoaded {
   opacity: 1;
-}
-
-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* remove focus outline unless user is navigating by keyboard */
-a,
-button:focus {
-  outline: none;
-}
-a:focus-visible,
-button:focus-visible {
-  outline: 1px solid #000;
-}
-.darkTheme a:focus-visible,
-.darkTheme button:focus-visible {
-  outline: 1px solid #fff;
 }
 
 .changeImage {
@@ -136,6 +149,11 @@ button:focus-visible {
   width: 50px;
 }
 
+/*
+
+Paging arrows and dots
+
+*/
 .arrow {
   color: #000;
   font-size: 32px;
@@ -189,6 +207,7 @@ button:focus-visible {
     height: 22px;
     left: 110px;
     top: 420px;
+    transform: translateX(0);
     width: 38px;
     -moz-transform: translateX(-3px);
   }
