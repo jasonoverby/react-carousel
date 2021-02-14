@@ -233,6 +233,9 @@ Paging arrows and dots
     max-width: 350px;
   }
 
+  .changeImage {
+    width: 30px;
+  }
   .arrow {
     font-size: 28px;
   }
@@ -287,5 +290,16 @@ Paging arrows and dots
 
   .dots button {
     font-size: 28px;
+  }
+}
+
+@media (max-width: 400px) {
+  .imgContainer {
+    height: 200px;
+    width: 250px;
+  }
+
+  img {
+    max-width: 200px;
   }
 }
