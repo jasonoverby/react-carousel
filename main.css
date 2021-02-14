@@ -1,13 +1,19 @@
+:root {
+  --dark-color: #0d1117;
+  --medium-color: #b9ad9a;
+  --light-color: papayawhip;
+}
+
 body {
   overflow: hidden;
 }
 
 main {
-  background-color: #fff;
+  background-color: var(--light-color);
   height: 100vh;
 }
 main.darkTheme {
-  background-color: #000;
+  background-color: var(--dark-color);
 }
 
 a {
@@ -39,11 +45,11 @@ button:focus {
 }
 a:focus-visible,
 button:focus-visible {
-  outline: 1px solid #000;
+  outline: 1px solid var(--dark-color);
 }
 .darkTheme a:focus-visible,
 .darkTheme button:focus-visible {
-  outline: 1px solid #fff;
+  outline: 1px solid var(--light-color);
 }
 
 /*
@@ -80,7 +86,7 @@ Toggle switch for dark theme
 }
 
 .slider {
-  background-color: #000;
+  background-color: var(--dark-color);
   border-radius: 34px;
   bottom: 0;
   cursor: pointer;
@@ -92,7 +98,7 @@ Toggle switch for dark theme
 }
 
 .slider:before {
-  background-color: #fff;
+  background-color: var(--light-color);
   border-radius: 50%;
   bottom: 4px;
   content: '';
@@ -103,11 +109,11 @@ Toggle switch for dark theme
   width: 20px;
 }
 .darkTheme .slider:before {
-  background-color: #000;
+  background-color: var(--dark-color);
 }
 
 #switch:checked + .slider {
-  background-color: #fff;
+  background-color: var(--light-color);
 }
 
 #switch:checked + .slider:before {
@@ -128,14 +134,14 @@ Image Carousel
 }
 
 .imgContainer {
-  border: 1px solid #000;
+  border: 1px solid var(--dark-color);
   display: grid;
   height: 450px;
   justify-content: center;
   width: 600px;
 }
 .darkTheme .imgContainer {
-  border-color: #fff;
+  border-color: var(--light-color);
 }
 
 .imageLoaded {
@@ -155,11 +161,11 @@ Paging arrows and dots
 
 */
 .arrow {
-  color: #000;
+  color: var(--dark-color);
   font-size: 32px;
 }
 .darkTheme .arrow {
-  color: #fff;
+  color: var(--light-color);
 }
 
 .dots {
@@ -169,24 +175,21 @@ Paging arrows and dots
 }
 
 .dots button {
-  color: #aaa;
+  color: #e7d9c1;
   font-size: 40px;
   padding: 0 10px;
 }
 
 .dots button.active {
-  color: #000;
+  color: var(--dark-color);
 }
 .darkTheme .dots button.active {
-  color: #fff;
+  color: var(--light-color);
 }
 
 .arrow:hover,
 .dots button:hover {
-  color: #777;
-}
-.darkTheme .dots button:hover {
-  color: #ccc;
+  color: var(--medium-color);
 }
 
 @media (max-width: 800px) {
@@ -286,10 +289,12 @@ Paging arrows and dots
   }
 
   .arrow {
+    color: var(--dark-color);
     font-size: 24px;
   }
 
   .dots button {
+    color: var(--dark-color);
     font-size: 28px;
   }
 }
