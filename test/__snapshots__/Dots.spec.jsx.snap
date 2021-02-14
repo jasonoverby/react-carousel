@@ -4,7 +4,7 @@ exports[`Dots and Dot Dot renders correctly 1`] = `
 <DocumentFragment>
   <button
     aria-label="show image 1"
-    class="active"
+    class=""
     type="button"
   >
     <span>
@@ -21,7 +21,7 @@ exports[`Dots and Dot Dots renders correctly 1`] = `
   >
     <button
       aria-label="show image 1"
-      class="active"
+      class=""
       type="button"
     >
       <span>

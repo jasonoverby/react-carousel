@@ -4,18 +4,12 @@ import PropTypes from 'prop-types';
 import { imageLocations } from '../lib/image-locations';
 import { updateImage } from '../lib/update-image';
 
-export const Dots = ({
-  activeDotIndex,
-  setActiveDotIndex,
-  setImageIndex,
-  setImageLoaded,
-}) => {
+export const Dots = ({ imageIndex, setImageIndex, setImageLoaded }) => {
   const dots = imageLocations.map((_, i) => (
     <Dot
-      activeDotIndex={activeDotIndex}
+      imageIndex={imageIndex}
       index={i}
       key={`dot-${i}`}
-      setActiveDotIndex={setActiveDotIndex}
       setImageIndex={setImageIndex}
       setImageLoaded={setImageLoaded}
     />
@@ -24,22 +18,15 @@ export const Dots = ({
   return <div className="dots">{dots}</div>;
 };
 
-export const Dot = ({
-  activeDotIndex,
-  index,
-  setActiveDotIndex,
-  setImageIndex,
-  setImageLoaded,
-}) => {
+export const Dot = ({ imageIndex, index, setImageIndex, setImageLoaded }) => {
   return (
     <button
-      className={index === activeDotIndex ? 'active' : ''}
+      className={index === imageIndex ? 'active' : ''}
       // image number in label should not be zero-indexed as that might be confusing
       aria-label={`show image ${index + 1}`}
       onClick={async () => {
         await updateImage({
           updatedImageIndex: index,
-          setActiveDotIndex,
           setImageIndex,
           setImageLoaded,
         });
@@ -52,8 +39,6 @@ export const Dot = ({
 };
 
 Dots.propTypes = {
-  activeDotIndex: PropTypes.number.isRequired,
-  setActiveDotIndex: PropTypes.func.isRequired,
   setImageIndex: PropTypes.func.isRequired,
   setImageLoaded: PropTypes.func.isRequired,
 };

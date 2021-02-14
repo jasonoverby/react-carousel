@@ -7,20 +7,13 @@ import { Dots, Dot } from '../components/Dots';
 jest.spyOn(updateImage, 'updateImage');
 
 describe('Dots and Dot', () => {
-  const activeDotIndex = 0;
-  const setActiveDotIndex = jest.fn();
   const setImageIndex = jest.fn();
   const setImageLoaded = jest.fn();
 
   describe('Dots', () => {
     it('renders correctly', () => {
       const { asFragment } = render(
-        <Dots
-          activeDotIndex={activeDotIndex}
-          setActiveDotIndex={setActiveDotIndex}
-          setImageIndex={setImageIndex}
-          setImageLoaded={setImageLoaded}
-        />,
+        <Dots setImageIndex={setImageIndex} setImageLoaded={setImageLoaded} />,
       );
       expect(asFragment()).toMatchSnapshot();
     });
@@ -31,9 +24,7 @@ describe('Dots and Dot', () => {
     it('renders correctly', () => {
       const { asFragment } = render(
         <Dot
-          activeDotIndex={activeDotIndex}
           index={index}
-          setActiveDotIndex={setActiveDotIndex}
           setImageIndex={setImageIndex}
           setImageLoaded={setImageLoaded}
         />,
@@ -44,9 +35,7 @@ describe('Dots and Dot', () => {
     it('calls updateImage on click', () => {
       const { container } = render(
         <Dot
-          activeDotIndex={activeDotIndex}
           index={index}
-          setActiveDotIndex={setActiveDotIndex}
           setImageIndex={setImageIndex}
           setImageLoaded={setImageLoaded}
         />,
@@ -56,7 +45,6 @@ describe('Dots and Dot', () => {
       fireEvent.click(button);
       expect(updateImage.updateImage).toHaveBeenCalledWith({
         updatedImageIndex: index,
-        setActiveDotIndex,
         setImageIndex,
         setImageLoaded,
       });

@@ -9,12 +9,10 @@ export const Carousel = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [carouselPaused, setCarouselPaused] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(true);
-  const [activeDotIndex, setActiveDotIndex] = useState(0);
 
   useImageCycling({
     carouselPaused,
     imageIndex,
-    setActiveDotIndex,
     setImageIndex,
     setImageLoaded,
   });
@@ -23,7 +21,6 @@ export const Carousel = () => {
     <div className="container">
       <DecrementImage
         imageIndex={imageIndex}
-        setActiveDotIndex={setActiveDotIndex}
         setImageIndex={setImageIndex}
         setImageLoaded={setImageLoaded}
       />
@@ -34,13 +31,11 @@ export const Carousel = () => {
       />
       <IncrementImage
         imageIndex={imageIndex}
-        setActiveDotIndex={setActiveDotIndex}
         setImageIndex={setImageIndex}
         setImageLoaded={setImageLoaded}
       />
       <Dots
-        activeDotIndex={activeDotIndex}
-        setActiveDotIndex={setActiveDotIndex}
+        imageIndex={imageIndex}
         setImageIndex={setImageIndex}
         setImageLoaded={setImageLoaded}
       />

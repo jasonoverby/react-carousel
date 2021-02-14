@@ -50,21 +50,18 @@ describe('update-image', () => {
   });
 
   describe('updateImage', () => {
-    const setActiveDotIndex = jest.fn();
     const setImageIndex = jest.fn();
     const setImageLoaded = jest.fn();
 
-    it('updates imageIndex and activeDotIndex', async () => {
+    it('updates imageIndex', async () => {
       jest.useFakeTimers();
       const updatedImageIndex = 1;
       await updateImage({
         updatedImageIndex,
-        setActiveDotIndex,
         setImageIndex,
         setImageLoaded,
       });
 
-      expect(setActiveDotIndex).toHaveBeenCalledWith(updatedImageIndex);
       expect(setImageIndex).toHaveBeenCalledWith(updatedImageIndex);
     });
   });
