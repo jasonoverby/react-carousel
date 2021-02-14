@@ -12,7 +12,6 @@ jest.spyOn(updateImage, 'updateImage');
 jest.spyOn(updateImage, 'getNewImageIndex');
 
 describe('ChangeImage', () => {
-  const setActiveDotIndex = jest.fn();
   const setImageIndex = jest
     .fn()
     .mockImplementation((imageIndex, incrementOrDecrement) =>
@@ -26,7 +25,6 @@ describe('ChangeImage', () => {
         <UpdateImage
           incrementOrDecrement={incrementOrDecrement}
           imageIndex={imageIndex}
-          setActiveDotIndex={setActiveDotIndex}
           setImageIndex={setImageIndex}
           setImageLoaded={setImageLoaded}
         />,
@@ -49,7 +47,6 @@ describe('ChangeImage', () => {
         incrementOrDecrement,
       );
       expect(updateImage.updateImage).toHaveBeenCalledWith({
-        setActiveDotIndex,
         setImageIndex,
         setImageLoaded,
         updatedImageIndex,
@@ -71,7 +68,6 @@ describe('ChangeImage', () => {
         incrementOrDecrement,
       );
       expect(updateImage.updateImage).toHaveBeenCalledWith({
-        setActiveDotIndex,
         setImageIndex,
         setImageLoaded,
         updatedImageIndex,
@@ -85,7 +81,6 @@ describe('ChangeImage', () => {
       const { asFragment } = render(
         <DecrementImage
           imageIndex={imageIndex}
-          setActiveDotIndex={setActiveDotIndex}
           setImageIndex={setImageIndex}
           setImageLoaded={setImageLoaded}
         />,
@@ -100,7 +95,6 @@ describe('ChangeImage', () => {
       const { asFragment } = render(
         <IncrementImage
           imageIndex={imageIndex}
-          setActiveDotIndex={setActiveDotIndex}
           setImageIndex={setImageIndex}
           setImageLoaded={setImageLoaded}
         />,
