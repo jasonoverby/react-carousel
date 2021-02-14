@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { imageLocations } from '../lib/image-locations';
-import { updateImage } from '../lib/utils';
+import { updateImage } from '../lib/update-image';
 
 export const Dots = ({
   activeDotIndex,

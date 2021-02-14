@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dots and Dot Dot renders correctly 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="show image 1"
+    class="active"
+    type="button"
+  >
+    <span>
+      •
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Dots and Dot Dots renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="dots"
+  >
+    <button
+      aria-label="show image 1"
+      class="active"
+      type="button"
+    >
+      <span>
+        •
+      </span>
+    </button>
+    <button
+      aria-label="show image 2"
+      class=""
+      type="button"
+    >
+      <span>
+        •
+      </span>
+    </button>
+    <button
+      aria-label="show image 3"
+      class=""
+      type="button"
+    >
+      <span>
+        •
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;

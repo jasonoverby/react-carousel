@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageContainer renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="imgContainer"
+  >
+    <a
+      aria-label="Visit
+        http://href.com/ (opens in a new tab)"
+      href="http://href.com/"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <img
+        alt="test"
+        aria-label="This image will change every ten seconds unless the cursor is hovering over it"
+        class="imageLoaded"
+        src="http://src.com/something.jpg"
+      />
+    </a>
+  </div>
+</DocumentFragment>
+`;
