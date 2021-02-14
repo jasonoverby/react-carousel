@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChangeImage DecrementImage renders correctly 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="show previous image"
+    class="changeImage"
+    type="button"
+  >
+    <span
+      class="arrow"
+    >
+      ◀
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`ChangeImage IncrementImage renders correctly 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="show next image"
+    class="changeImage"
+    type="button"
+  >
+    <span
+      class="arrow"
+    >
+      ▶
+    </span>
+  </button>
+</DocumentFragment>
+`;
