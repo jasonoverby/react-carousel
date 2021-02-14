@@ -11,7 +11,9 @@ export const UpdateImage = ({
   setImageLoaded,
 }) => (
   <button
-    aria-label="show previous image"
+    aria-label={`show ${
+      incrementOrDecrement === 'decrement' ? 'previous' : 'next'
+    } image`}
     className="changeImage"
     onClick={async () => {
       const updatedImageIndex = getNewImageIndex(
