@@ -1,15 +1,15 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
-import * as utils from '../lib/utils';
+import * as updateImage from '../lib/update-image';
 import {
   DecrementImage,
   IncrementImage,
   UpdateImage,
 } from '../components/ChangeImage';
 
-jest.spyOn(utils, 'updateImage');
-jest.spyOn(utils, 'getNewImageIndex');
+jest.spyOn(updateImage, 'updateImage');
+jest.spyOn(updateImage, 'getNewImageIndex');
 
 describe('ChangeImage', () => {
   const setActiveDotIndex = jest.fn();
@@ -21,8 +21,8 @@ describe('ChangeImage', () => {
   const setImageLoaded = jest.fn();
 
   describe('UpdateImage', () => {
-    const getContainer = (incrementOrDecrement, imageIndex) =>
-      render(
+    const getContainer = (incrementOrDecrement, imageIndex) => {
+      const { container } = render(
         <UpdateImage
           incrementOrDecrement={incrementOrDecrement}
           imageIndex={imageIndex}
@@ -31,22 +31,24 @@ describe('ChangeImage', () => {
           setImageLoaded={setImageLoaded}
         />,
       );
+      return container;
+    };
 
     it('increments the image', () => {
       const imageIndex = 0;
       const incrementOrDecrement = 'increment';
       const updatedImageIndex = imageIndex + 1;
-      const { container } = getContainer(incrementOrDecrement, imageIndex);
+      const container = getContainer(incrementOrDecrement, imageIndex);
 
       const button = container.firstChild;
       expect(button.getAttribute('aria-label')).toEqual('show next image');
       expect(button.firstChild.textContent).toEqual('▶');
       fireEvent.click(button);
-      expect(utils.getNewImageIndex).toHaveBeenCalledWith(
+      expect(updateImage.getNewImageIndex).toHaveBeenCalledWith(
         imageIndex,
         incrementOrDecrement,
       );
-      expect(utils.updateImage).toHaveBeenCalledWith({
+      expect(updateImage.updateImage).toHaveBeenCalledWith({
         setActiveDotIndex,
         setImageIndex,
         setImageLoaded,
@@ -58,17 +60,17 @@ describe('ChangeImage', () => {
       const imageIndex = 1;
       const incrementOrDecrement = 'decrement';
       const updatedImageIndex = imageIndex - 1;
-      const { container } = getContainer(incrementOrDecrement, imageIndex);
+      const container = getContainer(incrementOrDecrement, imageIndex);
 
       const button = container.firstChild;
       expect(button.getAttribute('aria-label')).toEqual('show previous image');
       expect(button.firstChild.textContent).toEqual('◀');
       fireEvent.click(button);
-      expect(utils.getNewImageIndex).toHaveBeenCalledWith(
+      expect(updateImage.getNewImageIndex).toHaveBeenCalledWith(
         imageIndex,
         incrementOrDecrement,
       );
-      expect(utils.updateImage).toHaveBeenCalledWith({
+      expect(updateImage.updateImage).toHaveBeenCalledWith({
         setActiveDotIndex,
         setImageIndex,
         setImageLoaded,

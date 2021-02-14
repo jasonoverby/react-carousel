@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { updateImage, getNewImageIndex } from '../lib/utils';
+import { updateImage, getNewImageIndex } from '../lib/update-image';
 
 export const UpdateImage = ({
   incrementOrDecrement,
