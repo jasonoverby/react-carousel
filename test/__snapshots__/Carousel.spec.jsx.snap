@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <button
+      aria-label="show previous image"
+      class="changeImage"
+      type="button"
+    >
+      <span
+        class="arrow"
+      >
+        ◀
+      </span>
+    </button>
+    <div
+      class="imgContainer"
+    >
+      <a
+        aria-label="Visit
+        https://www.scientificamerican.com/article/cats-can-get-coronavirus-study-suggests-but-pet-owners-need-not-panic/ (opens in a new tab)"
+        href="https://www.scientificamerican.com/article/cats-can-get-coronavirus-study-suggests-but-pet-owners-need-not-panic/"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="cat on a bed"
+          aria-label="This image will change every ten seconds unless the cursor is hovering over it"
+          class="imageLoaded"
+          src="https://bit.ly/370FSY3"
+        />
+      </a>
+    </div>
+    <button
+      aria-label="show next image"
+      class="changeImage"
+      type="button"
+    >
+      <span
+        class="arrow"
+      >
+        ▶
+      </span>
+    </button>
+    <div
+      class="dots"
+    >
+      <button
+        aria-label="show image 1"
+        class="active"
+        type="button"
+      >
+        <span>
+          •
+        </span>
+      </button>
+      <button
+        aria-label="show image 2"
+        class=""
+        type="button"
+      >
+        <span>
+          •
+        </span>
+      </button>
+      <button
+        aria-label="show image 3"
+        class=""
+        type="button"
+      >
+        <span>
+          •
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

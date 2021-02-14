@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeSwitch renders correctly 1`] = `
+<DocumentFragment>
+  <span
+    class="themeIcon"
+  >
+    🌞
+  </span>
+  <div
+    class="themeSwitch"
+  >
+    <label
+      for="switch"
+    >
+      <input
+        aria-checked="false"
+        id="switch"
+        role="switch"
+        type="checkbox"
+      />
+      <span
+        class="slider"
+      />
+    </label>
+  </div>
+  <span
+    class="themeIcon"
+  >
+    🌜
+  </span>
+</DocumentFragment>
+`;
+
+exports[`ThemeSwitch renders correctly when checked is true 1`] = `
+<DocumentFragment>
+  <span
+    class="themeIcon"
+  >
+    🌞
+  </span>
+  <div
+    class="themeSwitch"
+  >
+    <label
+      for="switch"
+    >
+      <input
+        aria-checked="true"
+        checked=""
+        id="switch"
+        role="switch"
+        type="checkbox"
+      />
+      <span
+        class="slider"
+      />
+    </label>
+  </div>
+  <span
+    class="themeIcon"
+  >
+    🌜
+  </span>
+</DocumentFragment>
+`;
