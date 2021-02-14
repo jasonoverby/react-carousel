@@ -6,7 +6,6 @@ import { updateImage, getNewImageIndex } from '../lib/update-image';
 export const UpdateImage = ({
   incrementOrDecrement,
   imageIndex,
-  setActiveDotIndex,
   setImageIndex,
   setImageLoaded,
 }) => (
@@ -21,7 +20,6 @@ export const UpdateImage = ({
         incrementOrDecrement,
       );
       await updateImage({
-        setActiveDotIndex,
         setImageIndex,
         setImageLoaded,
         updatedImageIndex,
@@ -35,37 +33,24 @@ export const UpdateImage = ({
   </button>
 );
 
-export const DecrementImage = ({
-  imageIndex,
-  setActiveDotIndex,
-  setImageIndex,
-  setImageLoaded,
-}) =>
+export const DecrementImage = ({ imageIndex, setImageIndex, setImageLoaded }) =>
   UpdateImage({
     imageIndex,
     incrementOrDecrement: 'decrement',
-    setActiveDotIndex,
     setImageIndex,
     setImageLoaded,
   });
 
-export const IncrementImage = ({
-  imageIndex,
-  setActiveDotIndex,
-  setImageIndex,
-  setImageLoaded,
-}) =>
+export const IncrementImage = ({ imageIndex, setImageIndex, setImageLoaded }) =>
   UpdateImage({
     imageIndex,
     incrementOrDecrement: 'increment',
-    setActiveDotIndex,
     setImageIndex,
     setImageLoaded,
   });
 
 DecrementImage.propTypes = {
   imageIndex: PropTypes.number.isRequired,
-  setActiveDotIndex: PropTypes.func.isRequired,
   setImageIndex: PropTypes.func.isRequired,
   setImageLoaded: PropTypes.func.isRequired,
 };
