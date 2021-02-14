@@ -54,7 +54,7 @@ describe('update-image', () => {
     const setImageIndex = jest.fn();
     const setImageLoaded = jest.fn();
 
-    it.only('updates imageIndex and activeDotIndex', async () => {
+    it('updates imageIndex and activeDotIndex', async () => {
       jest.useFakeTimers();
       const updatedImageIndex = 1;
       await updateImage({
